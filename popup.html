@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 220px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 12px;
+      background-color: #f9f9fb;
+      color: #15141a;
+    }
+    h3 {
+      font-size: 14px;
+      margin: 0 0 10px 0;
+      border-bottom: 1px solid #d7d7db;
+      padding-bottom: 6px;
+    }
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .2s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .2s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #0060df;
+    }
+    input:checked + .slider:before {
+      transform: translateX(14px);
+    }
+  </style>
+</head>
+<body>
+  <img src="icon.png" style="width: 64px; height: 64px;"/>
+  <h3>Tab Sounds</h3>
+  <p><i>Manage which sounds are enabled or disabled.</i></p>
+  <div class="setting-item">
+    <span>Open Tab</span>
+    <label class="switch">
+      <input type="checkbox" id="soundOpen" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="setting-item">
+    <span>Close Tab</span>
+    <label class="switch">
+      <input type="checkbox" id="soundClose" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="setting-item">
+    <span>Focus Tab</span>
+    <label class="switch">
+      <input type="checkbox" id="soundFocus" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="setting-item">
+    <span>Unfocus Tab</span>
+    <label class="switch">
+      <input type="checkbox" id="soundUnfocus" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="setting-item">
+    <span>Move Tab</span>
+    <label class="switch">
+      <input type="checkbox" id="soundMoved" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
